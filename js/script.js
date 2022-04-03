@@ -64,6 +64,7 @@ for(let i = 0; i < links.length;i++) {
         }
         links[i].classList.add('active');
         tabs[i].classList.add('active');
+        alert('Время ускорено');
     })
 }
 
@@ -88,14 +89,12 @@ let seconds = document.querySelector('.stopwatch__seconds'),
 let timeOut; 
 
 start.addEventListener('click', (() => {
-    alert('Время ускорено');
     (start.innerHTML == 'start') ? timer() : 
     (start.innerHTML == 'stop') ? stopTimer() :
     clearTimer(); 
 }))
 
 function timer() {
-    
     start.innerHTML = 'stop';
     clear.classList.add("active");
     if(seconds.innerHTML < 60){
