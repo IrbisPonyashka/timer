@@ -24,6 +24,7 @@
 
 
 
+
 let sec = document.querySelector('.s'),
     min = document.querySelector('.m'),
     hour = document.querySelector('.h'),
@@ -87,28 +88,30 @@ let seconds = document.querySelector('.stopwatch__seconds'),
 let timeOut; 
 
 start.addEventListener('click', (() => {
+    alert('Время ускорено');
     (start.innerHTML == 'start') ? timer() : 
     (start.innerHTML == 'stop') ? stopTimer() :
     clearTimer(); 
 }))
 
 function timer() {
+    
     start.innerHTML = 'stop';
     clear.classList.add("active");
     if(seconds.innerHTML < 60){
         seconds.innerHTML++
         seconds.innerHTML = seconds.innerHTML < 10 ? `0${seconds.innerHTML}` : seconds.innerHTML;
-        timeOut = setTimeout(() => timer(), 1000); 
+        timeOut = setTimeout(() => timer(), 100); 
     }else if( seconds.innerHTML = 59) {
         seconds.innerHTML = 0;
         minutes.innerHTML++;
         minutes.innerHTML = minutes.innerHTML < 10 ? `0${minutes.innerHTML}` : minutes.innerHTML;
-        timeOut = setTimeout(() => timer(), 1000);
+        timeOut = setTimeout(() => timer(), 100);
         if( minutes.innerHTML == 60){
             minutes.innerHTML = 0;
             hours.innerHTML++;
             hours.innerHTML = hours.innerHTML < 10 ? `0${hours.innerHTML}` : hours.innerHTML;
-            timeOut = setTimeout(() => timer(), 1000)
+            timeOut = setTimeout(() => timer(), 100)
             if( hours.innerHTML == 24) {
             hours.innerHTML = 0;
             }
